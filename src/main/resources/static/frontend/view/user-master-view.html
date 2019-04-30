@@ -1,0 +1,27 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/vaadin-text-field/src/vaadin-text-field.html">
+
+<dom-module id="master-view">
+
+    <template>
+        <div>
+            <slot name="master-content">
+                <vaadin-text-field id="textField" label="test">TEST</vaadin-text-field>
+            </slot>
+            <slot name="detail-content">
+                detail is empty
+            </slot>
+        </div>
+
+
+    </template>
+    <script>
+        class MasterView extends Polymer.Element {
+            static get is() {
+                return "master-view";
+            }
+        }
+
+        window.customElements.define(MasterView.is, MasterView)
+    </script>
+</dom-module>
